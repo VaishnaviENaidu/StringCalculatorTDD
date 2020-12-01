@@ -1,9 +1,9 @@
 
 public class StringCalculator {
 
-	public Object Add(String string) {
+	public int Add(String string) {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 
 }
