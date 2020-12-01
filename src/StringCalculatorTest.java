@@ -32,10 +32,20 @@ public void  AcceptNewLineAsDelimeter() throws Exception {
 }
 
 @Test
-public void AcceptAnyDelimeter() {
+public void AcceptAnyDelimeter() throws Exception{
 	checkAdd("//;\n1;3",4);
 }
 
+@Test
+public void exceptionWithNegatives() throws Exception{
+	try{
+		checkAdd("-3,2,-23,5",0);
+	}
+	catch(Exception e) {
+		assertEquals("Negatives Not Allowed: -3,-23",
+				      e.getMessage());
+	}
+}
 
 
 

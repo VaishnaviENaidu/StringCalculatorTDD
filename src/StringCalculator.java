@@ -10,7 +10,17 @@ public class StringCalculator {
 		if("".equals(string))
 		return 0;
 		String[] values = splitter.split(string);
+		checkForNegatives(values);
 	return addArray(values);
+	}
+	private void checkForNegatives(String[] values) {
+		String negatives= "";
+		for(String value:values) {
+			if(value.contains("-"))
+               negatives += ","+value;        
+		}
+		if(!"".equals(negatives))
+			throw new RuntimeException("Negatives Not Allowed: "+negatives.substring(1));
 	}
 	
 	private int addArray(String[] values) {
