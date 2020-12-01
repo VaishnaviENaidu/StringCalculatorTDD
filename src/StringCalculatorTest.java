@@ -9,6 +9,10 @@ public void returnOnEmpty() {
 	assertEquals(0,cal.Add(""));
 }
 
+@Test
+public void returnNum() {
+	assertEquals(1,cal.Add("1"));
+}
 
 
 
