@@ -5,8 +5,12 @@ public class StringCalculator {
 		// TODO Auto-generated method stub
 		if("".equals(string))
 		return 0;
-		else
-			return Integer.valueOf(string);
+		String[] values=string.split(",");
+		int sum=0;
+		for(String value:values) {
+			sum+=Integer.valueOf(value);
+		}
+			return sum;
 	}
 
 }
