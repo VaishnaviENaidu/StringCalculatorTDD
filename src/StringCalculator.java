@@ -1,13 +1,17 @@
 
 public class StringCalculator {
 
+	Splitter splitter;
+	
+	public StringCalculator() {
+		splitter=new Splitter();
+	}
 	public int Add(String string) {
 		if("".equals(string))
 		return 0;
-		String[] values=string.split(",|\n");
+		String[] values = splitter.split(string);
 	return addArray(values);
 	}
-
 	
 	private int addArray(String[] values) {
 		int sum=0;

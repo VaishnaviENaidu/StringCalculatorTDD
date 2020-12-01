@@ -31,7 +31,10 @@ public void  AcceptNewLineAsDelimeter() throws Exception {
 	checkAdd("1\n2,3",6);
 }
 
-
+@Test
+public void AcceptAnyDelimeter() {
+	checkAdd("//;\n1;3",4);
+}
 
 
 
