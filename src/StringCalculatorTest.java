@@ -4,26 +4,32 @@ import org.junit.Test;
 public class StringCalculatorTest {
 StringCalculator cal=new StringCalculator();
 
+private void checkAdd(String string,int expected) {
+	assertEquals(expected,cal.Add(string));
+}
+
 @Test
 public void returnOnEmpty() {
-	assertEquals(0,cal.Add(""));
-}
+	checkAdd("",0);
+	}
 
 @Test
 public void returnNum() {
-	assertEquals(1,cal.Add("1"));
-}
+	checkAdd("1",1);
+	}
 
 @Test
 public void returnSum() throws Exception{
-	assertEquals(3,cal.Add("1,2"));
-	assertEquals(6,cal.Add("1,2,3"));
+	checkAdd("1,2",3);
+	checkAdd("1,2,3",6);
+	
 }
 
 
-
-
-
+@Test
+public void  AcceptNewLineAsDelimeter() throws Exception {
+	checkAdd("1\n2,3",6);
+}
 
 
 
